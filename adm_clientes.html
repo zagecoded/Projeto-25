@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Clientes - bb.business</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    /* ===== MENU LATERAL RETRÁTIL ===== */
+    #menu-toggle {
+      display: none;
+    }
+
+    label {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: #006000;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 1000;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 230px;
+      height: 100%;
+      background-color: #006000;
+      color: white;
+      padding-top: 60px;
+      transition: 0.3s;
+      box-shadow: 3px 0 6px rgba(0,0,0,0.3);
+    }
+
+    #menu-toggle:checked + label + .menu {
+      left: 0;
+    }
+
+    .menu h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .menu a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 5px 10px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      background: white;
+      color: #006000;
+    }
+
+    /* ===== CABEÇALHO ===== */
+    header {
+      background-color: #006000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* ===== CONTEÚDO ===== */
+    main {
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    #menu-toggle:checked ~ main {
+      margin-left: 230px;
+    }
+
+    /* ===== FORMULÁRIO ===== */
+    form {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    form h2 {
+      text-align: center;
+      color: #006000;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #006000;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #004d00;
+    }
+
+    /* ===== TABELA ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #006000;
+      color: white;
+    }
+
+    td {
+      background: #fafafa;
+    }
+
+    .acoes {
+      text-align: center;
+    }
+
+    .acoes button {
+      margin: 2px;
+      font-size: 14px;
+    }
+
+    /* ===== RODAPÉ ===== */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #006000;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Checkbox que ativa o menu -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle">☰</label>
+
+  <!-- MENU LATERAL -->
+  <div class="menu">
+    <h3>Administração</h3>
+    <a href="adm.html"> Painel ADM</a>
+   <a href="adm_dashboard.html">📊 Dashboard</a>
+    <a href="adm_produtos.html">📦 Produtos</a>
+    <a href="adm_pedidos.html">🛒 Pedidos</a>
+    <a href="adm_clientes.html">👥 Clientes</a>
+    <a href="adm_relatorios.html">📈 Relatórios</a>
+    <a href="tela inicial.html">Ver loja</a>
+    <a href="login_adm.html">🚪 Terminar Sessão</a>
+  </div>
+
+  <!-- CABEÇALHO -->
+  <header>Gestão de Clientes — bb.business</header>
+
+  <!-- CONTEÚDO -->
+  <main>
+    <form>
+      <h2>Adicionar Novo Cliente</h2>
+
+      
+      <input type="text" id="nome" placeholder="Nome do cliente" required>
+
+    
+      <input type="email" id="email" placeholder=" cliente@exemplo.com" required>
+
+      <input type="tel" id="telefone" placeholder="Número de telefone do cliente" required>
+
+    
+      <select id="pais" required>
+        <option value="">Selecione...</option>
+        <option>Angola</option>
+        <option>Brasil</option>
+        <option>Portugal</option>
+      </select>
+
+      <button type="submit">Salvar Cliente</button>
+    </form>
+
+    <h2>📋 Lista de Clientes</h2>
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th>País</th>
+        <th>Ações</th>
+      </tr>
+      <tr>
+        <td>Emanuel Zage</td>
+        <td>zage.eletronico@gmail.com</td>
+        <td>+244 926 695 673</td>
+        <td>Angola</td>
+        <td class="acoes">
+          <button>Editar</button>
+          <button>Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Ricardo Pereira</td>
+        <td>ricardopereira@gmail.com</td>
+        <td>+351 913 445 140</td>
+        <td>Portugal</td>
+        <td class="acoes">
+          <button>Editar</button>
+          <button>Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Emanuel Zage</td>
+        <td>zage.eletronico@gmail.com</td>
+        <td>+244 926 695 673</td>
+        <td>Angola</td>
+        <td class="acoes">
+          <button>Editar</button>
+          <button>Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Emanuel Zage</td>
+        <td>zage.eletronico@gmail.com</td>
+        <td>+244 926 695 673</td>
+        <td>Angola</td>
+        <td class="acoes">
+          <button>Editar</button>
+          <button>Excluir</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Emanuel Zage</td>
+        <td>zage.eletronico@gmail.com</td>
+        <td>+244 926 695 673</td>
+        <td>Angola</td>
+        <td class="acoes">
+          <button>Editar</button>
+          <button>Excluir</button>
+        </td>
+      </tr>
+    </table>
+  </main>
+
+  <footer>
+    © 2025 bb.business | Gestão de Clientes
+  </footer>
+
+</body>
+</html>

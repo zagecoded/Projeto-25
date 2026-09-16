@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>carrinho bb.business</title>
+    <!-- Menu inferior -->
+     <!-- Ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #006000;
+      color: #333;
+    }
+
+    header {
+      background-color: #006000; 
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+   
+    /* ======= MENU DE NAVEGAÇÃO SUPERIOR ======= */  
+nav ul {  
+  list-style: none;  
+  margin: 15px 0;  
+  padding: 0;  
+  display: flex;  
+  justify-content: center;  
+  gap: 20px;  
+  background-color: #006000; /* fundo verde */  
+  color: white; /* texto branco */  
+}  
+
+nav ul li {  
+  display: inline-block;  
+  font-weight: bold;  
+  color: white; /* garante que os itens fiquem brancos */  
+}  
+
+nav ul li a {  
+  color: white; /* links brancos */  
+  text-decoration: none;  
+  font-weight: bold;  
+  transition: color 0.3s;  
+}  
+
+nav ul li a:hover {  
+  color: black; /* verde escuro ao passar o mouse */  
+  text-decoration: underline;  
+}
+
+ .carrinho {
+      max-width: 900px;
+      margin: 40px auto 80px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .carrinho h2 {
+      text-align: center;
+      color: #006000;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: ;
+      color: #006000;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #fff;
+    }
+
+    tr:hover td {
+      background-color: #f5f5f5;
+    }
+
+    button {
+      background-color: #006000;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #004d00;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .acoes {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .acoes button {
+      margin-left: 10px;
+    }
+
+     /* ===== MENU INFERIOR FIXO ===== */
+    .bottom-nav {  
+      display: flex;  
+      justify-content: space-around;  
+      align-items: center;  
+      background-color: white;  
+      border-top: 2px solid #006000;  
+      padding: 10px 0;  
+      position: fixed;  
+      bottom: 0;  
+      width: 100%;  
+      z-index: 10;  
+    }
+
+    .bottom-nav a {  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      font-size: 14px;  
+      text-decoration: none;  
+      color: #333;  
+      transition: 0.3s;  
+    }
+
+    .bottom-nav a i {  
+      font-size: 20px;  
+      margin-bottom: 4px;  
+    }
+
+    .bottom-nav a:hover {  
+      color: #006000;  
+      transform: scale(1.1);
+    }
+
+    .bottom-nav a.ativo {  
+      color: #006000;  
+      font-weight: bold;  
+    }
+   
+    </style>
+    
+</head>
+<body>
+    
+     <!-- Cabeçalho -->
+  <header>
+    <h1>bb.business</h1>
+    
+    <!-- Menu inferior -->
+     
+  <div class="bottom-nav">
+    <a href="tela inicial.html"><i class="fa fa-home"></i>Home</a>
+    <a href="categoria.html"><i class="fa fa-th"></i>Categoria</a>
+    <a href="tendencia.html"><i class="fa fa-fire"></i>Tendências</a>
+    <a href="carr.html" id="linkCarrinho">
+  <i class="fa fa-shopping-cart"></i> 
+  Carrinho <span id="contadorCarrinho">3</span>
+</a>
+    <a href="perfil.html"><i class="fa fa-user"></i>Eu</a>
+  </div>
+    <nav>
+      <ul>
+        <li><a href="tudo.html">Tudo</a></li>
+        <li><a href="smart.html">SmartPhones</a></li>
+        <li><a href="comp.html">Computadores</a></li>
+        <li><a href="acess.html">Acessórios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <header>
+    <h1>🛒 Carrinho de Compras</h1>
+  </header>
+
+  <div class="carrinho">
+    <h2>Itens no seu carrinho</h2>
+
+    <table id="tabelaCarrinho">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço (KZ)</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>iPhone 14 Pro Max</td>
+          <td>850.000</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Air Pods Max</td>
+          <td>150.000</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Apple Type-C</td>
+          <td>25.000</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total">Total: KZ 1.025.000</div>
+  
+    <div class="acoes">
+  <button onclick="window.location.href='limpar_carr.html'">Esvaziar Carrinho</button>
+           <button onclick="window.location.href='final_compra.html'">Finalizar Compra</button>
+      <button onclick="window.location.href='tela inicial.html'"> Continuar Comprando</button>
+    </div>
+  </div>
+
+
+    
+</body>
+</html>

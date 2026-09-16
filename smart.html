@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>smartphone bb.business</title>
+    <!-- Menu inferior -->
+     <!-- Ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #006000;
+      color: #333;
+    }
+
+    header {
+      background-color: #006000; 
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    /* ======= BARRA DE PESQUISA ======= */
+    .search-bar {
+      margin-top: 10px;
+  
+    }
+
+    .search-bar input {
+      padding: 8px;
+      width: 200px;
+      border-radius: 20px;
+      border: none;
+    }
+
+   
+    /* ======= MENU DE NAVEGAÇÃO SUPERIOR ======= */  
+nav ul {  
+  list-style: none;  
+  margin: 15px 0;  
+  padding: 0;  
+  display: flex;  
+  justify-content: center;  
+  gap: 20px;  
+  background-color: #006000; /* fundo verde */  
+  color: white; /* texto branco */  
+}  
+
+nav ul li {  
+  display: inline-block;  
+  font-weight: bold;  
+  color: white; /* garante que os itens fiquem brancos */  
+}  
+
+nav ul li a {  
+  color: white; /* links brancos */  
+  text-decoration: none;  
+  font-weight: bold;  
+  transition: color 0.3s;  
+}  
+
+nav ul li a:hover {  
+  color: black; /* verde escuro ao passar o mouse */  
+  text-decoration: underline;  
+}
+
+    /* ======= BANNER ======= */
+    .banner {
+      background-color: ;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    /* ======= CATEGORIAS ======= */
+    .categorias {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .categorias div {
+      text-align: center;
+    }
+
+    .categorias img {
+      border-radius: 10px;
+      width: 100px;
+      height: 100px;
+    }
+
+    /* ======= PRODUTOS ======= */
+    .produtos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      color: #777;
+    }
+
+    .card button {
+      background-color: #006000;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #006000;
+    }
+
+   
+    /* ======= MENU INFERIOR ======= */  
+.bottom-nav {  
+  display: flex;  
+  justify-content: space-around;  
+  align-items: center;  
+  background-color: #fff;  
+  border-top: 2px solid #006000;  
+  padding: 10px 0;  
+  position: fixed;  
+  bottom: 0;  
+  width: 100%;  
+  z-index: 10;  
+}
+
+.bottom-nav a {  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  font-size: 14px;  
+  text-decoration: none;  
+  color: #333;  
+  transition: 0.3s;  
+}
+
+.bottom-nav a i {  
+  font-size: 20px;  
+  margin-bottom: 4px;  
+}
+
+.bottom-nav a:hover {  
+  color: #006000;  
+  transform: scale(1.1); /* pequeno destaque ao passar o mouse */
+}
+
+.bottom-nav a.ativo {  
+  color: #006000;  
+  font-weight: bold;  
+}
+    </style>
+</head>
+<body>
+    
+     <!-- Cabeçalho -->
+  <header>
+    <h1>bb.business</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+    <!-- Menu inferior -->
+  <div class="bottom-nav">
+    <a href="tela inicial.html"><i class="fa fa-home"></i>Home</a>
+    <a href="categoria.html"><i class="fa fa-th"></i>Categoria</a>
+    <a href="tendencia.html"><i class="fa fa-fire"></i>Tendências</a>
+    <a href="carr.html" id="linkCarrinho">
+  <i class="fa fa-shopping-cart"></i>
+  Carrinho <span id="contadorCarrinho">0</span>
+</a>
+    <a href="perfil.html"><i class="fa fa-user"></i>Eu</a>
+  </div>
+    <nav>
+      <ul>
+        <li><a href="tudo.html">Tudo</a></li>
+        <li><a href="smart.html">SmartPhones</a></li>
+        <li><a href="comp.html">Computadores</a></li>
+        <li><a href="acess.html">Acessórios</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <!-- Produtos -->
+  <section class="produtos">
+    <div class="card">
+      <img src="img proj/ip13n.jpg"  height="170" width="140" alt="Produto 1">
+      <h3>iPhone 13 Normal</h3><p>256GB</p>
+      <p>450.000,00Kz</p>
+            <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip14.jpg"  height="170" width="140" alt="Produto 2">
+      <h3>iPhone 14 pro Max</h3><p>256GB</p>
+      <p>680.000,00Kz</p>
+             <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip5.jpg"  height="170" width="140" alt="Produto 3">
+      <h3>iphone 15 Normal</h3><p>256GB</p>
+      <p>780.000,00Kz</p>
+             <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/troc ip15M.jpg"  height="170" width="140" alt="Produto 4">
+      <h3>iPhone 15 pro Max</h3><p>256GB</p>
+      <p>920.000,00Kz</p>
+             <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+  </section>
+
+    <section class="produtos">
+    <div class="card">
+      <img src="img proj/ip15p.jpg"  height="170" width="140" alt="Produto 1">
+      <h3>iPhone 15 Pro</h3><p>256GB</p>
+      <p>:830.000,00Kz</p>
+            <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip12.jpg"  height="170" width="140" alt="Produto 2">
+      <h3>iPhone 12 Normal</h3><p>256GB</p>
+      <p>310.000,00kz</p>
+             <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip11.jpg"  height="170" width="140" alt="Produto 3">
+      <h3>iphone 11 Normal</h3><p>256GB</p>
+      <p>255.000,00Kz</p>
+           <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip11p.jpg"  height="170" width="140" alt="Produto 4">
+      <h3>iPhone 11 pro Max</h3><p>256GB</p>
+      <p>335.000,00Kz</p>
+             <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+  </section>
+
+<section class="produtos">
+    <div class="card">
+      <img src="img proj/ip14plus.jpg"  height="170" width="140" alt="Produto 1">
+      <h3>iPhone 14 Plus</h3><p>256GB</p>
+      <p>650.000,00Kz</p>
+            <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip14pM.jpg"  height="170" width="140" alt="Produto 2">
+      <h3>iPhone 14 pro Max</h3><p>256GB</p>
+      <p>690.000,00Kz</p>
+            <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip13pM.jpg"  height="170" width="140" alt="Produto 3">
+      <h3>iPhone 13 pro Max</h3><p>256GB</p>
+      <p>580.000,00kz</p>
+            <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip11p.jpg"  height="170" width="140" alt="Produto 4">
+      <h3>iPhone 11 pro </h3><p>128GB</p>
+      <p>300.000,00Kz</p>
+            <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+  </section>
+
+<section class="produtos">
+    <div class="card">
+      <img src="img proj/ip12pM.jpg"  height="170" width="140" alt="Produto 1">
+      <h3>iPhone 12 pro Max</h3><p>256GB</p>
+      <p>485.000,00Kz</p>
+             <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip8p.jpg"  height="170" width="140" alt="Produto 2">
+      <h3>iPhone 8 Plus</h3><p>64GB</p>
+      <p>120.000,00Kz</p>
+           <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip17.jpg"  height="170" width="140" alt="Produto 3">
+      <h3>iphone 17 Pro</h3><p>256GB</p>
+      <p>1.900.000,00Kz</p>
+              <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+    <div class="card">
+      <img src="img proj/ip7p.jpg"  height="170" width="140" alt="Produto 4">
+      <h3>iPhone 7 Plus</h3><p>128GB</p>
+      <p>110.000,00Kz</p>
+            <button onclick="window.location.href='carr.html'">Comprar</button>
+    </div>
+  </section>
+
+
+</body>
+</html>

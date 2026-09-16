@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho Limpo — bb.business</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #006000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .mensagem {
+      background: white;
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .mensagem h2 {
+      color: #006000;
+      margin-bottom: 15px;
+    }
+
+    .mensagem p {
+      font-size: 16px;
+      margin: 10px 0 25px 0;
+    }
+
+    .mensagem .icone {
+      font-size: 60px;
+      color: #006000;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #006000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #004d00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>bb.business</h1>
+  </header>
+
+  <div class="mensagem">
+    <div class="icone">🧹</div>
+    <h2>Carrinho Esvaziado</h2>
+    <p>Todos os itens foram removidos com sucesso.</p>
+    <p>Você pode continuar comprando normalmente.</p>
+    <button onclick="window.location.href='tela inicial.html'">Voltar à Loja</button>
+  </div>
+</body>
+</html>

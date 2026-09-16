@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Relatório de Vendas e Pedidos | bb.business</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #006000;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* ======= RELATÓRIO ======= */
+    .relatorio {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .relatorio h2 {
+      text-align: center;
+      color: #006000;
+      margin-bottom: 25px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    /* ======= BLOCO DE RESUMO ======= */
+    .resumo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .resumo p {
+      background: #f3fdf3;
+      border-left: 5px solid #006000;
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    /* ======= TABELA ======= */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    th {
+      background-color: #006000;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f3fdf3;
+    }
+
+    /* ======= BOTÕES ======= */
+    .acoes {
+      text-align: right;
+    }
+
+    .acoes button {
+      background-color: #006000;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .acoes button:hover {
+      background-color: #004d00;
+      transform: scale(1.05);
+    }
+
+    /* ======= RESPONSIVIDADE ======= */
+    @media (max-width: 600px) {
+      .relatorio {
+        padding: 20px;
+      }
+
+      .resumo {
+        grid-template-columns: 1fr;
+      }
+
+      .acoes button {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+      }
+    }
+     footer {
+      text-align: center;
+      padding: 15px;
+      background: #006000;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>📊 Relatório de Vendas e Pedidos</header>
+
+  <section class="relatorio">
+    <h2>Resumo Geral</h2>
+
+    <div class="resumo">
+      <p>Total de Vendas: <strong>AKZ 84.340.000</strong></p>
+      <p>Pedidos Recebidos: <strong>87</strong></p>
+      <p>Pedidos Entregues: <strong>79</strong></p>
+      <p>Lucro Estimado: <strong>AKZ 50.890.000</strong></p>
+    </div>
+
+    <table>
+      <tr>
+        <th>ID Pedido</th>
+        <th>Cliente</th>
+        <th>Status</th>
+        <th>Valor (KZ)</th>
+        <th>Data</th>
+      </tr>
+       <tr>
+          <td>#0001</td>
+          <td>Edmilson Jaime</td>
+          <td>iPhone 14 Pro</td>
+           <td>780.000</td>
+          <td>01/10/2025</td>
+         
+         
+        </tr>
+        <tr>
+          <td>#0002</td>
+          <td>Moises Teca</td>
+          <td>iPHone 8 plus</td>
+          <td>120.000</td>
+          <td>05/10/2025</td>
+          
+        
+        </tr>
+        <tr>
+          <td>#0003</td>
+          <td>Samuel Fernando</td>
+          <td>iPhone 12 Normal</td>
+            <td>310.000</td>
+          <td>15/10/2025</td>
+        
+          
+        </tr>
+        <tr>
+          <td>#0004</td>
+          <td>Cristiano Lutama</td>
+          <td>Air pods Max</td>
+           <td>150.000</td>
+          <td>05/10/2025</td>
+         
+        
+        </tr>
+        <tr>
+          <td>#0005</td>
+          <td>Carlos Neto</td>
+          <td>iphone 17 Pro</td>
+          <td>1.900.000</td>
+          <td>05/10/2025</td>  
+         
+        </tr>
+
+        <tr>
+          <td>#0006</td>
+          <td>Elias Gonga</td>
+          <td>iphone 17 Pro Max</td>
+          <td>2.250.000</td>
+          <td>17/10/2025</td>  
+         
+        </tr>
+    </table>
+
+    <div class="acoes">
+      <button onclick="window.location.href='adm.html'" class="btn" type="button">Voltar ao Painel</button>
+      <button>📄 Gerar PDF</button>
+      <button>📊 Exportar Excel</button>
+    </div>
+  </section>
+
+<footer>
+    © 2025 bb.business | Gestão de Relatório
+  </footer>
+</body>
+</html>

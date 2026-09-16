@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Finalizar Compra bb.business</title>
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #006000;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #006000;
+      text-align: center;
+    }
+
+    .info {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #006000;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004d00;
+    }
+
+    .total {
+      text-align: right;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .mensagem {
+      text-align: center;
+      color: #006000;
+      font-weight: bold;
+      margin-top: 20px;
+      display: none;
+    }
+
+    /* ===== MENU INFERIOR ===== */
+    .bottom-nav {  
+      display: flex;  
+      justify-content: space-around;  
+      align-items: center;  
+      background-color: #fff;  
+      border-top: 2px solid #006000;  
+      padding: 10px 0;  
+      position: fixed;  
+      bottom: 0;  
+      width: 100%;  
+      z-index: 10;  
+    }
+
+    .bottom-nav a {  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      font-size: 14px;  
+      text-decoration: none;  
+      color: #333;  
+      transition: 0.3s;  
+    }
+
+    .bottom-nav a:hover {  
+      color: #006000;  
+      transform: scale(1.1);
+    }
+
+    #contadorCarrinho {
+      background-color: gray;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 7px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Finalizar Compra</h1>
+  </header>
+
+  <div class="container">
+    <h2>Informações do Cliente</h2>
+    <div class="aviso" id="aviso">⚠️ Preencha todos os campos antes de confirmar!</div>
+
+    <div class="info">
+      <label>Nome Completo:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+
+      <label>Gmail:</label>
+      <input type="text" id="gmail" placeholder="Digite seu Gmail" required>
+
+      <label>Endereço:</label>
+      <input type="text" id="endereco" placeholder=" Morada, Bairro, Rua,  Nº da casa" required>
+
+      <label>Telefone:</label>
+      <input type="tel" id="telefone" placeholder="Número de telefone" required>
+
+      <label>Método de Pagamento:</label>
+      <select id="pagamento">
+        <option value="entrega">Pagamento na Entrega</option>
+        <option value="transferencia">Transferência IBAN</option>
+        <option value="cartao">Cartão</option>
+        <option value="express"> Transferência Express</option>
+      </select>
+    </div>
+
+    <div class="total" id="valorTotal">Total: KZ 1.025.000</div>
+<button onclick="validarCompra()">Confirmar compra</button>
+
+    <p class="mensagem" id="mensagemSucesso">✅ Pedido realizado com sucesso!<br>Obrigado por comprar na <b>bb.business</b>.</p>
+  </div>
+
+  <script>
+function validarCompra() {
+
+  const nome = document.getElementById("nome").value.trim();
+  const gmail = document.getElementById("gmail").value.trim();
+  const endereco = document.getElementById("endereco").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+  const aviso = document.getElementById("aviso");
+
+  aviso.style.color = "red";
+
+  // validar nome (mínimo nome e sobrenome)
+  if (nome.split(" ").length < 2) {
+    aviso.textContent = "Digite o nome completo.";
+    return;
+  }
+
+  // validar gmail
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regexEmail.test(gmail)) {
+    aviso.textContent = "Digite um Gmail válido.";
+    return;
+  }
+
+  // validar endereço
+  if (endereco === "") {
+    aviso.textContent = "Digite o endereço completo.";
+    return;
+  }
+
+  // validar telefone (apenas números e mínimo 9)
+  const regexTel = /^[0-9]{9,}$/;
+  if (!regexTel.test(telefone)) {
+    aviso.textContent = "Telefone inválido.";
+    return;
+  }
+
+  // se tudo estiver correto
+  aviso.style.color = "green";
+  aviso.textContent = "Dados validados com sucesso!";
+
+  // redireciona
+  setTimeout(() => {
+    window.location.href = "confirmar_compra.html";
+  }, 800);
+}
+</script>
+  
+</body>
+</html>

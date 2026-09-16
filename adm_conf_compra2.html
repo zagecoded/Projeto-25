@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Pedido | bb.business</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #006000;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      background: white;
+      margin: 40px auto;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #006000;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .pedido-info {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .pedido-info strong {
+      color: #006000;
+    }
+
+    .acoes {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .acoes a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-aprovar {
+      background-color: #006000;
+    }
+
+    .btn-aprovar:hover {
+      background-color: #004d00;
+    }
+
+    .btn-recusar {
+      background-color: #cc0000;
+    }
+
+    .btn-recusar:hover {
+      background-color: #990000;
+    }
+
+    .btn-entregue {
+      background-color: #007bff;
+    }
+
+    .btn-entregue:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #006000;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .voltar {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #006000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .voltar:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Painel do Administrador — bb.business</h2>
+  </header>
+
+  <div class="container">
+    <h1>📦 Confirmação de Pedido</h1>
+
+    <div class="pedido-info">
+      <p><strong>Número do Pedido:</strong> #BB2254</p>
+      <p><strong>Cliente:</strong> Samuel Fernando</p>
+      <p><strong>Endereço:</strong> Centralidade do Kilamba , Quarteirão D , Edifício 25,Casa nº71</p>
+      <p><strong>Produto:</strong> iPhone 7 plus</p>
+      <p><strong>Quantidade:</strong> 1 unidade</p>
+      <p><strong>Valor Total:</strong> 110.000 KZ</p>
+      <p><strong>Status:</strong> Aguardando confirmação do administrador</p>
+    </div>
+
+    <div class="acoes">
+      <a href="pedido_aprovado.html" class="btn-aprovar">✅ Aprovar Pedido</a>
+      <a href="pedido_recusado.html" class="btn-recusar">❌ Recusar Pedido</a>
+      <a href="pedido_entregue.html" class="btn-entregue">🚚 Marcar como Entregue</a>
+    </div>
+
+    <a href="adm.html" class="voltar">← Voltar ao Painel</a>
+  </div>
+
+  <footer>
+    &copy; 2025 bb.business — Painel Administrativo
+  </footer>
+
+</body>
+</html>

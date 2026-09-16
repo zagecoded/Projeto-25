@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel — Relatórios | bb.business</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+    }
+
+    /* ===== MENU LATERAL ===== */
+    .menu-lateral {
+      width: 230px;
+      background-color: #006000;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 30px;
+    }
+
+    .menu-lateral h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-left: 4px solid transparent;
+      transition: 0.3s;
+    }
+
+    .menu-lateral a:hover,
+    .menu-lateral a.ativo {
+      background-color: #004d00;
+      border-left: 4px solid #fff;
+    }
+
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    .conteudo {
+      margin-left: 230px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    header {
+      background-color: white;
+      color: #006000;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    /* ===== CARDS DE RESUMO ===== */
+    .cards {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 230px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #006000;
+    }
+
+    .card p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* ===== TABELA ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #006000;
+      color: white;
+      font-size: 16px;
+    }
+
+    tr:hover td {
+      background-color: #f5f5f5;
+    }
+
+    /* ===== BOTÃO ===== */
+    .btn {
+      background-color: #006000;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #004d00;
+    }
+
+    /* ===== FILTRO ===== */
+    .filtro {
+      margin-bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .filtro label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .filtro input, .filtro select {
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== MENU LATERAL ===== -->
+  <div class="menu-lateral">
+    <h2>Adm</h2>
+    <a href="adm.html"> Painel ADM</a>
+    <a href="adm_dashboard.html">📊 Dashboard</a>
+    <a href="adm_produtos.html">📦 Produtos</a>
+    <a href="adm_pedidos.html">🛒 Pedidos</a>
+    <a href="adm_clientes.html">👥 Clientes</a>
+    <a href="adm_relatorios.html">📈 Relatórios</a>
+    <a href="tela inicial.html">Ver loja</a>
+    <a href="login_adm.html">🚪 Terminar Sessão</a>
+  </div>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <div class="conteudo">
+    <header>
+      <h1>Relatórios de Vendas e Pedidos</h1>
+    </header>
+
+    <!-- ===== CARDS DE RESUMO ===== -->
+    <div class="cards">
+      <div class="card">
+        <h3>Vendas Totais</h3>
+        <p>10.358.000 KZ</p>
+      </div>
+      <div class="card">
+        <h3>Pedidos Entregues</h3>
+        <p>45</p>
+      </div>
+      <div class="card">
+        <h3>Pedidos Pendentes</h3>
+        <p>8</p>
+      </div>
+      <div class="card">
+        <h3>Cancelados</h3>
+        <p>3</p>
+      </div>
+    </div>
+
+    <!-- ===== FILTRO ===== -->
+    <div class="filtro">
+      <form>
+        <label for="data">Período:</label>
+        <input type="date" id="data-inicio"> até 
+        <input type="date" id="data-fim">
+
+        <label for="tipo">Tipo:</label>
+        <select id="tipo">
+          <option>Todos</option>
+          <option>Pedidos</option>
+          <option>Produtos</option>
+          <option>Clientes</option>
+        </select>
+
+        <button onclick="window.location.href='adm_gerar_relatorio.html'" class="btn" type="button">Gerar Relatório</button>
+      </form>
+    </div>
+
+    <!-- ===== TABELA DE RELATÓRIOS ===== -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Produto</th>
+          <th>Data</th>
+          <th>Valor (KZ)</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#001</td>
+          <td>Maria Silava</td>
+          <td>iPhone 14 Pro</td>
+          <td>01/10/2025</td>
+          <td>780.000</td>
+          <td>Entregue</td>
+        </tr>
+        <tr>
+          <td>#002</td>
+          <td>Moises Teca</td>
+          <td>iPHone 8 plus</td>
+          <td>05/10/2025</td>
+          <td>120.000</td>
+          <td>Enviado</td>
+        </tr>
+        <tr>
+          <td>#003</td>
+          <td>Samuel  Fernando</td>
+          <td>iPhone 12 Normal</td>
+          <td>15/10/2025</td>
+          <td>310.000</td>
+          <td>Cancelado</td>
+        </tr>
+        <tr>
+          <td>#004</td>
+          <td>Cristiano Lutama</td>
+          <td>Air pods Max</td>
+          <td>05/10/2025</td>
+          <td>150.000</td>
+          <td>Enviado</td>
+        </tr>
+        <tr>
+          <td>#005</td>
+          <td>Carlos Neto</td>
+          <td>iphone 17 Pro</td>
+          <td>05/10/2025</td>
+          <td>1.900.000</td>
+          <td>Enviado</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <button class="btn">Exportar Relatório</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Administrador — bb.business</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #006000;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav {
+      background-color: #004d00;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      color: #006000;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #e5f4e5;
+      color: #006000;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    select {
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #006000;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #004d00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #006000;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Painel do Administrador</h1>
+    <p>bb.business — Gestão de Pedidos</p>
+  </header>
+
+  <div class="menu">
+   <button onclick="window.location.href='adm_dashboard.html'">📊 Dashboard</button>
+    <button onclick="window.location.href='adm_produtos.html'">📦 Produtos</button>
+   <button onclick="window.location.href='adm_clientes.html'">👤 Clientes</button>
+   <button onclick="window.location.href='adm_pedidos.html'">🛒 Pedidos</button>
+  <button onclick="window.location.href='adm_relatorios.html'">📈 Relatórios</button>
+  </div>
+
+  <div class="container">
+    <h2>Pedidos Recebidos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Pedido</th>
+          <th>Cliente</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th>Método de Pagamento</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#001</td>
+          <td>Alexandra Amado</td>
+          <td>+244 937 555 380</td>
+          <td>Maianga</td>
+          <td>Dinheiro na entrega</td>
+          <td>
+            <select>
+              <option>Pendente</option>
+              <option>Enviado</option>
+              <option>Entregue</option>
+            </select>
+          </td>
+          <td>
+              <button onclick="window.location.href='adm_conf_compra.html'">Ver</button>
+            
+          </td>
+        </tr>
+        <tr>
+          <td>#002</td>
+          <td>Samuel Fernando</td>
+          <td>+244 920 000 020</td>
+          <td>Centralidade Kilamba</td>
+          <td>Transferência</td>
+          <td>
+            <select>
+              <option >Pendente</option>
+              <option  selected >Enviado</option>
+              <option>Entregue</option>
+            </select>
+          </td>
+          <td>
+           <button onclick="window.location.href='adm_conf_compra2.html'">Ver</button>
+          </td>
+        </tr>
+        <tr>
+          <td>#003</td>
+          <td>Maria Andrade</td>
+          <td>+244 928 000 020</td>
+          <td>Camama</td>
+          <td>Transferência</td>
+          <td>
+            <select>
+              <option selected>Pendente</option>
+              <option >Enviado</option>
+              <option>Entregue</option>
+            </select>
+          </td>
+          <td>
+           <button onclick="window.location.href='adm_conf_compra3.html'">Ver</button>
+          </td>
+        </tr>
+        
+
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    © 2025 bb.business | Painel Administrativo
+  </footer>
+
+</body>
+</html>

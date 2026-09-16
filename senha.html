@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova senha</title>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, white,#006000);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .senha-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 20px #006000;
+      width: 300px;
+      text-align: center;
+    }
+    .senha-container h2 {
+      margin-bottom: 20px;
+      color: #006000;
+    }
+    .senha-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #006000;
+      border-radius: 8px;
+      outline: none;
+    }
+    .senha-container button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #006000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .senha-container button:hover {
+      background: #006000;
+    }
+    .senha-container a {
+      display: block;
+      margin-top: 12px;
+      color: #006000;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .senha-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+<body>
+    <div class="senha-container">
+    <h2>Nova Senha</h2>
+    <input type="text" id="email" placeholder="Digite seu e-mail">
+    <input type="password" id="novaSenha" placeholder="Nova senha (8 dígitos)">
+    <button onclick="atualizarSenha()">Atualizar Senha</button>
+    <a href="login.html">Voltar ao Login</a>
+  </div>
+
+  
+</body>
+</html>

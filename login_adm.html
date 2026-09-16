@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Administrador - bb.business</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #004d00, #00a000);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      width: 330px;
+      text-align: center;
+    }
+
+    h2,h3 {
+      color: #006000;
+      margin-bottom: 25px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #006000;
+      outline: none;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    /* Wrapper para colocar o ícone dentro do campo */
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    /* Ícone de mostrar/ocultar */
+    .toggle-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #006000;
+      font-size: 16px;
+      user-select: none;
+    }
+
+    button {
+      background: #006000;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #004d00;
+    }
+
+    a {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #006000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .rodape {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>bb.business</h2>
+    <h3>Login para Administrador</h3>
+
+      <input type="text" name="usuario" placeholder="Usuário" required>
+
+      <!-- CAMPO DE SENHA COM ÍCONE -->
+      <form onsubmit="return validarLogin(event)">
+
+  <div class="password-wrapper">
+    <input type="password" id="senha" placeholder="Senha" required>
+    <span class="toggle-icon" onclick="mostrarSenha()">👁</span>
+  </div>
+
+  <button type="submit">Entrar</button>
+  <p id="erro" style="color:red; font-size:13px;"></p>
+</form>
+
+
+  <!-- JAVASCRIPT INTERNO -->
+  <script>
+    function mostrarSenha() {
+      const campo = document.getElementById("senha");
+      const icone = document.querySelector(".toggle-icon");
+
+      if (campo.type === "password") {
+        campo.type = "text";
+        icone.textContent = "🙈"; // ocultar
+      } else {
+        campo.type = "password";
+        icone.textContent = "👁"; // mostrar
+      }
+}
+
+  </script>
+
+</body>
+</html>

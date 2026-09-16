@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Login bb.business</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, white,#006000);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 20px #006000;
+      width: 300px;
+      text-align: center;
+    }
+    .login-container h2,h3 {
+      margin-bottom: 20px;
+      color: #006000;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #006000;
+      border-radius: 8px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    /* Caixa que segura a senha + ícone */
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    /* Ícone */
+    .toggle-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #006000;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #006000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-container a {
+      display: block;
+      margin-top: 12px;
+      color: #006000;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>bb.business</h2>
+    <h3>Login para Usuário</h3>
+
+    <form onsubmit="return validarLogin(event)">
+  <input type="text" id="usuario" placeholder="Usuário ou E-mail" required>
+
+  <div class="password-wrapper">
+    <input type="password" id="senha" placeholder="Senha" required>
+    <span class="toggle-icon" onclick="mostrarSenha()">👁</span>
+  </div>
+
+  <button type="submit">Entrar</button>
+  <p id="erro" style="color:red; font-size:13px;"></p>
+</form>
+
+    <p><a href="tela inicial.html">Voltar à Loja</a></p>
+    <p><a href="login_adm.html">Painel de ADM</a></p>
+  </div>
+
+  <script>
+function validarLogin(event) {
+  event.preventDefault();
+
+  const usuario = document.getElementById("usuario");
+  const senha = document.getElementById("senha");
+  const erro = document.getElementById("erro");
+
+  const userValue = usuario.value.trim();
+  const passValue = senha.value.trim();
+
+  erro.textContent = "";
+
+  // LIMITE USUÁRIO
+  if (userValue === "") {
+    erro.textContent = "Preencha o usuário.";
+    return false;
+  }
+
+  if (userValue.length < 3) {
+    erro.textContent = "Mínimo 3 caracteres no usuário.";
+    return false;
+  }
+
+  if (userValue.length > 50) {
+    erro.textContent = "Máximo 50 caracteres no usuário.";
+    return false;
+  }
+
+  // LIMITE SENHA
+  if (passValue === "") {
+    erro.textContent = "Preencha a senha.";
+    return false;
+  }
+
+  if (passValue.length < 4) {
+    erro.textContent = "Mínimo 4 caracteres na senha.";
+    return false;
+  }
+
+  if (passValue.length > 10) {
+    erro.textContent = "Máximo 10 caracteres na senha.";
+    return false;
+  }
+
+  alert("Login realizado com sucesso!");
+  window.location.href = "tela inicial.html";
+
+  return false;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Notificação ao Cliente | bb.business</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #eaffea, #ffffff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .caixa {
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 380px;
+    }
+
+    h2 {
+      color: #006000;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: bold;
+      color: #006000;
+    }
+
+    input, textarea, select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      resize: none;
+      font-size: 14px;
+    }
+
+    .btn {
+      background: #006000;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #004d00;
+    }
+
+    .voltar {
+      display: inline-block;
+      margin-top: 10px;
+      color: #006000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .voltar:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      position: fixed; bottom: 0; background-color: #006000;
+      color: white; text-align: center; width: 100%; padding: 10px; font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="caixa">
+    <h2>📩 Notificar Cliente</h2>
+    <p>Envie uma mensagem ao cliente sobre o status do pedido.</p>
+
+    <form action="adm_notificacao_enviada.html" method="get">
+      <input type="text" id="nome" name="nome" placeholder="Nome do cliente" required>
+      <input type="text" id="pedido" name="pedido" placeholder="Número do pedido" required>
+      <select id="status" name="status" required>
+        <option value="">Selecione...</option>
+        <option value="Aprovado">✅ Aprovado</option>
+        <option value="Recusado">❌ Recusado</option>
+        <option value="Entregue">🚚 Entregue</option>
+      </select>
+      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Informação para o cliente..." required></textarea>
+      <button onclick="window.location.href='adm_notificacao_enviada.html'" type="submit" class="btn">Enviar Notificação</button> 
+    </form>
+  <a href="adm.html"> Voltar ao Painel</a> 
+  </div>
+  
+  <script>
+function validarNotificacao(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome");
+  const pedido = document.getElementById("pedido");
+  const status = document.getElementById("status");
+  const mensagem = document.getElementById("mensagem");
+  const erro = document.getElementById("erro");
+
+  erro.textContent = "";
+
+  if (nome.value.trim() === "") {
+    erro.textContent = "Digite o nome do cliente.";
+    nome.focus();
+    return false;
+  }
+
+  if (nome.value.trim().length < 3) {
+    erro.textContent = "Nome deve ter no mínimo 3 letras.";
+    nome.focus();
+    return false;
+  }
+
+  if (pedido.value.trim() === "") {
+    erro.textContent = "Digite o número do pedido.";
+    pedido.focus();
+    return false;
+  }
+
+  if (status.value === "") {
+    erro.textContent = "Selecione o status.";
+    status.focus();
+    return false;
+  }
+
+  if (mensagem.value.trim() === "") {
+    erro.textContent = "Escreva a mensagem.";
+    mensagem.focus();
+    return false;
+  }
+
+  if (mensagem.value.trim().length < 10) {
+    erro.textContent = "Mensagem muito curta.";
+    mensagem.focus();
+    return false;
+  }
+
+  alert("Notificação enviada com sucesso!");
+  window.location.href = "adm_notificacao_enviada.html";
+
+  return false;
+}
+</script>
+
+   <footer> 
+        &copy; 2025 bb.business — Sistema Administrativo 
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil do Usuário bb.business</title>
+ <!-- Menu inferior -->
+     <!-- Ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+  }
+
+  header {
+    background-color: #006000;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ====== Menu Lateral Oculto ====== */
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-icon {
+    font-size: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  nav {
+    position: fixed;
+    left: -220px;
+    top: 0;
+    height: 100%;
+    width: 220px;
+    background-color: #004d00;
+    padding-top: 60px;
+    transition: left 0.3s;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 20px 0;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: #007000;
+  }
+
+  #menu-toggle:checked + nav {
+    left: 0;
+  }
+
+  header h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  /* ====== Cartão do Perfil ====== */
+  .profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #006000;
+  }
+
+  .profile-card h2 {
+    margin: 15px 0 5px;
+    color: #006000;
+  }
+
+  .profile-card p {
+    color: #333;
+    margin: 5px 0;
+  }
+
+  .btn {
+    background-color: #006000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .btn:hover {
+    background-color: #009000;
+  }
+  
+    /* ======= MENU INFERIOR ======= */  
+.bottom-nav {  
+  display: flex;  
+  justify-content: space-around;  
+  align-items: center;  
+  background-color: #fff;  
+  border-top: 2px solid #006000;  
+  padding: 10px 0;  
+  position: fixed;  
+  bottom: 0;  
+  width: 100%;  
+  z-index: 10;  
+}
+
+.bottom-nav a {  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  font-size: 14px;  
+  text-decoration: none;  
+  color: #333;  
+  transition: 0.3s;  
+}
+
+.bottom-nav a i {  
+  font-size: 20px;  
+  margin-bottom: 4px;  
+}
+
+.bottom-nav a:hover {  
+  color: #006000;  
+  transform: scale(1.1); /* pequeno destaque ao passar o mouse */
+}
+
+.bottom-nav a.ativo {  
+  color: #006000;  
+  font-weight: bold;  
+
+}
+</style>
+</head>
+<body>
+
+  <!-- Cabeçalho com botão do menu -->
+  <header>
+    <label for="menu-toggle" class="menu-icon">☰</label>
+    <h1>Perfil do Usuário</h1>
+  </header>
+
+  <!-- Menu lateral oculto -->
+  <input type="checkbox" id="menu-toggle">
+  <nav>
+    <ul>
+       <li><a href="adm.html">ADM</a></li>
+      <li><a href="carr.html">Meus Pedidos</a></li>
+       <li><a href="https://www.instagram.com" target="_blank" class="instagram-btn">Follow</a></li> 
+
+      <li><a href="login.html">Terminar Sessão</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo do perfil -->
+  <div class="profile-card">
+    <img src="../img/att.jpg" alt="Foto do usuário">
+    <h2>Maria Andrade</h2>
+    <p>Email: maria.andrade@gmail.com</p>
+    <p>Telefone: +244 923 555 888</p>
+    <a href="tela inicial.html" class="btn">Terminar Sessão</a>
+  </div>
+
+   <!-- Menu inferior -->
+  <div class="bottom-nav">
+    <a href="tela inicial.html"><i class="fa fa-home"></i>Home</a>
+    <a href="categoria.html"><i class="fa fa-th"></i>Categoria</a>
+    <a href="tendencia.html"><i class="fa fa-fire"></i>Tendências</a>
+    <a href="carr.html" id="linkCarrinho">
+  <i class="fa fa-shopping-cart"></i>
+  Carrinho <span id="contadorCarrinho">0</span>
+</a>
+
+</body>
+</html>
+
